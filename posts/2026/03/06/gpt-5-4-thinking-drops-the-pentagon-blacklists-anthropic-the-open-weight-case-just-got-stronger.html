@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GPT-5.4 Thinking drops. The Pentagon blacklists Anthropic. The open-weight case just got stronger. — Ground Model</title>
+  <meta name="description" content="GPT-5.4 Thinking Drops. The Pentagon Blacklists Anthropic. The Open-Weight Case Just Got Stronger.
+Ground Model — March 6, 2026
+
+Lead Story: GPT-5.4 Thinking Is">
+  <meta property="og:title" content="GPT-5.4 Thinking drops. The Pentagon blacklists Anthropic. The open-weight case just got stronger.">
+  <meta property="og:description" content="GPT-5.4 Thinking Drops. The Pentagon Blacklists Anthropic. The Open-Weight Case Just Got Stronger.
+Ground Model — March 6, 2026
+
+Lead Story: GPT-5.4 Thinking Is">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://groundmodel.com/posts/2026/03/06/gpt-5-4-thinking-drops-the-pentagon-blacklists-anthropic-the-open-weight-case-just-got-stronger.html">
+  
+  <meta property="og:image" content="https://groundmodel.com/static/images/10_2026-03-06_hero.png">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GPT-5.4 Thinking drops. The Pentagon blacklists Anthropic. The open-weight case just got stronger.">
+  <meta name="twitter:description" content="GPT-5.4 Thinking Drops. The Pentagon Blacklists Anthropic. The Open-Weight Case Just Got Stronger.
+Ground Model — March 6, 2026
+
+Lead Story: GPT-5.4 Thinking Is">
+  <link rel="canonical" href="https://groundmodel.com/posts/2026/03/06/gpt-5-4-thinking-drops-the-pentagon-blacklists-anthropic-the-open-weight-case-just-got-stronger.html">
+  <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+  
+  <!-- Full-width hero image with overlay -->
+  <div class="post-hero">
+    <img src="/static/images/10_2026-03-06_hero.png" alt="GPT-5.4 Thinking drops. The Pentagon blacklists Anthropic. The open-weight case just got stronger." loading="eager">
+    <div class="post-hero-overlay">
+      <div class="post-hero-title">GPT-5.4 Thinking drops. The Pentagon blacklists Anthropic. The open-weight case just got stronger.</div>
+      <div class="post-hero-meta">
+        Issue #7&nbsp;·&nbsp;<time datetime="2026-03-06">2026-03-06</time>&nbsp;·&nbsp;5 min read
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="page-shell">
+    <header class="site-header">
+      <a href="/" class="logo">Ground Model</a>
+      <span class="tagline">AI news. No hype. Just signal.</span>
+    </header>
+
+    <a href="/" class="back-link">&larr; All editions</a>
+
+    <article>
+      
+
+      <div class="post-body">
+        <h1>GPT-5.4 Thinking Drops. The Pentagon Blacklists Anthropic. The Open-Weight Case Just Got Stronger.</h1>
+<p><em>Ground Model — March 6, 2026</em></p>
+<hr />
+<h2>Lead Story: GPT-5.4 Thinking Is Here — And It's the First General-Purpose Model With Cyber Guardrails</h2>
+<p>OpenAI published the <a href="https://openai.com/index/gpt-5-4-thinking-system-card">GPT-5.4 Thinking system card</a> on March 5, 2026 — the latest reasoning model in the GPT-5 series and, notably, the first general-purpose model to implement mitigations for what OpenAI classifies as <strong>"High capability in Cybersecurity"</strong> under its Preparedness Framework.</p>
+<p>That classification matters. It means OpenAI considers this model capable enough in cyber offense that it needs deployment-level restrictions — the same protections applied to GPT-5.3 Codex. If you're building on the API, expect guardrails that limit certain code-generation and exploit-analysis capabilities compared to what the raw model can do.</p>
+<h3>So What for Builders?</h3>
+<p>Here's the open-weight angle nobody's talking about: <strong>Every time a frontier closed model adds a new safety restriction, the delta between what you can do with a closed API and what you can do with an open-weight model shifts.</strong></p>
+<p>This isn't about wanting to build malware. It's about predictability. If your product involves security tooling, pentesting assistants, code auditing, or any cybersecurity-adjacent workflow, you now have to wonder: will GPT-5.4 Thinking refuse my legitimate use case because it's near the guardrail boundary?</p>
+<p>Open-weight models like Llama, Mistral, and Qwen don't have this problem. You control the guardrails. You decide what's in-bounds for your application. The trade-off is capability — GPT-5.4 Thinking's reasoning is likely state-of-the-art — but for production systems where <strong>consistent, predictable behavior matters more than peak intelligence</strong>, open-weight keeps looking better.</p>
+<p>The real decision framework for builders in March 2026:</p>
+<ul>
+<li><strong>Go closed (GPT-5.4, Claude, Gemini)</strong> when you need frontier reasoning, your use case is squarely mainstream, and you can absorb sudden behavior changes from safety updates.</li>
+<li><strong>Go open-weight (Llama, Mistral, Qwen)</strong> when you need behavioral control, deployment flexibility, cost predictability, and your quality bar can be met with fine-tuning rather than raw model scale.</li>
+<li><strong>Go hybrid</strong> — which is what most serious teams should do — routing simple tasks to self-hosted open models and escalating to closed APIs for complex reasoning, with fallback logic so no single provider's policy change breaks your product.</li>
+</ul>
+<p>GPT-5.4 Thinking is impressive. But "impressive" and "shippable" are different things. The system card is a transparency win. It's also a reminder that when you build on closed models, someone else decides what your product can do.</p>
+<hr />
+<h2>Quick Hits</h2>
+<p><strong>1. The Pentagon formally labels Anthropic a supply-chain risk.</strong><br />
+<a href="https://www.theverge.com/ai-artificial-intelligence/890347/pentagon-anthropic-supply-chain-risk">The Verge reports</a> the Defense Department has officially designated Anthropic a supply-chain risk after the company refused to allow autonomous weapons and mass surveillance use cases. Defense contractors must now certify they don't use Anthropic products.</p>
+<p><strong>Builder takeaway:</strong> If you're selling to defense or gov-adjacent clients, Claude is now radioactive in that pipeline. This is the most dramatic real-world example of closed-model vendor risk — your AI provider's ethical stance can literally disqualify your product from an entire market. Open-weight models don't have this problem. Nobody can blacklist Llama.</p>
+<p><strong>2. OpenAI retiring GPT-4o, GPT-4.1, GPT-4.1 mini, and o4-mini from ChatGPT.</strong><br />
+<a href="https://openai.com/index/retiring-gpt-4o-and-older-models">The older model cull continues.</a> If you're still running production traffic on these, migration is no longer optional.</p>
+<p><strong>Builder takeaway:</strong> This is the treadmill tax of closed models. Every 6-12 months you re-test, re-prompt, and re-validate. Self-hosted open models don't deprecate unless you decide they do.</p>
+<p><strong>3. Reasoning models can't fully control their chains of thought — and OpenAI says that's good.</strong><br />
+<a href="https://openai.com/index/reasoning-models-chain-of-thought-controllability">New research</a> suggests the lack of full CoT control may prevent models from generating misleading reasoning.</p>
+<p><strong>Builder takeaway:</strong> If you're building with reasoning models and exposing CoT to users, understand that the thinking trace is an approximation, not a faithful log. Don't build audit systems that depend on CoT being ground truth.</p>
+<p><strong>4. OpenAI exploring ads in ChatGPT.</strong><br />
+<a href="https://openai.com/index/our-approach-to-advertising-and-expanding-access">OpenAI published its approach</a> to advertising and expanding access.</p>
+<p><strong>Builder takeaway:</strong> If ChatGPT becomes ad-supported, expect the free tier to expand massively — which compresses the market for lightweight AI tools that compete on access rather than capability. Your product moat needs to be workflow-specific, not "ChatGPT but free."</p>
+<hr />
+<h2>Company Watch: Anthropic</h2>
+<p>Anthopic is having a brutal week. The Pentagon has <a href="https://www.nytimes.com/2026/03/05/technology/anthropic-supply-chain-risk-defense-department.html">officially designated it a supply-chain risk</a>, a move that could cut the company off from all U.S. government business and force defense contractors to certify they don't use Claude.</p>
+<p>The core issue: Anthropic refused to allow its models to be used for autonomous weapons and mass surveillance. The military's position, per reporting: <em>"The military will not allow a vendor to insert itself into the chain of command by restricting the lawful use of a critical capability and put our warfighters at risk."</em></p>
+<p><strong>What this means for the market:</strong></p>
+<ul>
+<li><strong>Anthropic's TAM just shrank.</strong> Defense and intelligence is one of the highest-margin AI markets.</li>
+<li><strong>OpenAI wins by default.</strong> OpenAI has embedded itself into classified Pentagon operations while Anthropic gets frozen out.</li>
+<li><strong>Open-weight wins for defense builders.</strong> Self-hosted open-weight models can't be blacklisted. Llama on your own infrastructure means your product's availability depends on your ops, not someone else's ethics board.</li>
+</ul>
+<p>Anthopic took a principled stand. Whether it was a <em>smart</em> stand depends on whether you think the commercial AI market rewards principles. History suggests it doesn't.</p>
+<hr />
+<h2>Tool of the Day: vLLM</h2>
+<p><a href="https://github.com/vllm-project/vllm">vLLM</a> is the open-source inference engine that most serious teams use to serve open-weight models in production. With GPT-5.4 adding cyber guardrails, Anthropic getting blacklisted, and OpenAI retiring older models, the case for self-hosting has never been cleaner.</p>
+<p>vLLM supports Llama, Mistral, Qwen, and most popular open-weight architectures. Start here: deploy an open-weight model via vLLM alongside your closed API calls. Route 20% of non-critical traffic to it. Measure quality delta. That's your open-weight business case, built on data instead of vibes.</p>
+<hr />
+<h2>Stat of the Day</h2>
+<p>GPT-5.4 Thinking is the <strong>first general-purpose OpenAI model classified as "High capability in Cybersecurity"</strong> requiring deployment-level restrictions — a threshold previously only triggered by GPT-5.3 Codex. <em>(Source: OpenAI GPT-5.4 Thinking System Card, March 5, 2026)</em></p>
+<hr />
+<p><em>The model is the commodity. The guardrails are the product. Choose who sets yours.</em></p>
+      </div>
+    </article>
+
+    <!-- Share buttons -->
+    <div class="share-section">
+      <span class="share-label">Share this edition:</span>
+      <a href="https://twitter.com/intent/tweet?text=GPT-5.4%20Thinking%20drops.%20The%20Pentagon%20blacklists%20Anthropic.%20The%20open-weight%20case%20just%20got%20stronger.&url=https%3A//groundmodel.com/posts/2026/03/06/gpt-5-4-thinking-drops-the-pentagon-blacklists-anthropic-the-open-weight-case-just-got-stronger.html"
+         target="_blank" rel="noopener" class="share-btn">𝕏 Twitter</a>
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A//groundmodel.com/posts/2026/03/06/gpt-5-4-thinking-drops-the-pentagon-blacklists-anthropic-the-open-weight-case-just-got-stronger.html"
+         target="_blank" rel="noopener" class="share-btn">LinkedIn</a>
+      <button onclick="navigator.clipboard.writeText(window.location.href).then(()=>{this.textContent='Copied!';setTimeout(()=>{this.textContent='Copy link'},2000)})" class="share-btn">Copy link</button>
+    </div>
+
+    <!-- Subscribe CTA -->
+    <div class="subscribe-cta">
+      <h3>Get Ground Model in your inbox</h3>
+      <p>Daily AI briefings for builders. No hype. Just signal. Free, Mon-Fri.</p>
+      <a href="https://ground-model.beehiiv.com/subscribe" class="btn-subscribe">Subscribe free</a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-bottom">
+        <span class="copyright">&copy; 2026 Ground Model</span>
+        <a href="https://ground-model.beehiiv.com/unsubscribe" class="unsubscribe">Unsubscribe</a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Company logos for Quick Hits items: inject via JS using Clearbit -->
+  <script>
+  (function() {
+    // Parse domains from brief_domains passed from Python template
+    var briefDomains = ["theverge.com", "openai.com"];
+
+    // Find all links in the post body that are "Read more" links
+    var links = document.querySelectorAll('.post-body a');
+    var domainIndexMap = {};
+    briefDomains.forEach(function(d, i) { domainIndexMap[d] = i; });
+
+    links.forEach(function(a) {
+      try {
+        var url = new URL(a.href);
+        var domain = url.hostname.replace(/^www\./, '');
+        if (briefDomains.indexOf(domain) === -1) return;
+
+        // Walk up to find the containing paragraph or list item
+        var container = a.closest('p') || a.closest('li');
+        if (!container) return;
+
+        // Only inject once per container
+        if (container.dataset.logoInjected) return;
+        container.dataset.logoInjected = '1';
+
+        // Find the bold headline (strong tag) or first text
+        var strong = container.querySelector('strong');
+
+        // Create logo img
+        var img = document.createElement('img');
+        img.src = 'https://logo.clearbit.com/' + domain + '?size=64';
+        img.alt = domain;
+        img.className = 'brief-logo';
+        img.width = 28;
+        img.height = 28;
+        img.onerror = function() {
+          // Replace with fallback SVG icon
+          var fallback = document.createElement('span');
+          fallback.className = 'brief-logo-fallback';
+          fallback.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>';
+          img.replaceWith(fallback);
+        };
+
+        // Wrap in brief-card if in a plain paragraph
+        if (container.tagName === 'P') {
+          var card = document.createElement('div');
+          card.className = 'brief-card';
+
+          var head = document.createElement('div');
+          head.className = 'brief-card-head';
+          head.appendChild(img);
+
+          if (strong) {
+            var headline = document.createElement('div');
+            headline.className = 'brief-headline';
+            headline.innerHTML = strong.innerHTML;
+            head.appendChild(headline);
+            strong.remove();
+          }
+          card.appendChild(head);
+
+          var body = document.createElement('div');
+          body.className = 'brief-body';
+          body.innerHTML = container.innerHTML;
+          card.appendChild(body);
+
+          container.replaceWith(card);
+        } else {
+          // li: just prepend the logo
+          container.insertBefore(img, container.firstChild);
+        }
+      } catch(e) {}
+    });
+  })();
+  </script>
+
+</body>
+</html>
