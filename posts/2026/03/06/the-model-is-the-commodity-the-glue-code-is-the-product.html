@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The model is the commodity. The glue code is the product. — Ground Model</title>
+  <meta name="description" content="The model is the commodity. The glue code is the product.
+Ground Model — Daily AI newsletter for builders who ship
+
+Lead Story: AWS&#39;s Strands Glue Code Reveals">
+  <meta property="og:title" content="The model is the commodity. The glue code is the product.">
+  <meta property="og:description" content="The model is the commodity. The glue code is the product.
+Ground Model — Daily AI newsletter for builders who ship
+
+Lead Story: AWS&#39;s Strands Glue Code Reveals">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://groundmodel.com/posts/2026/03/06/the-model-is-the-commodity-the-glue-code-is-the-product.html">
+  
+  <meta property="og:image" content="https://groundmodel.com/static/images/2026-03-06_hero.png">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The model is the commodity. The glue code is the product.">
+  <meta name="twitter:description" content="The model is the commodity. The glue code is the product.
+Ground Model — Daily AI newsletter for builders who ship
+
+Lead Story: AWS&#39;s Strands Glue Code Reveals">
+  <link rel="canonical" href="https://groundmodel.com/posts/2026/03/06/the-model-is-the-commodity-the-glue-code-is-the-product.html">
+  <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+  
+  <!-- Full-width hero image with overlay -->
+  <div class="post-hero">
+    <img src="/static/images/2026-03-06_hero.png" alt="The model is the commodity. The glue code is the product." loading="eager">
+    <div class="post-hero-overlay">
+      <div class="post-hero-title">The model is the commodity. The glue code is the product.</div>
+      <div class="post-hero-meta">
+        Issue #3&nbsp;·&nbsp;<time datetime="2026-03-06">2026-03-06</time>&nbsp;·&nbsp;5 min read
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="page-shell">
+    <header class="site-header">
+      <a href="/" class="logo">Ground Model</a>
+      <span class="tagline">AI news. No hype. Just signal.</span>
+    </header>
+
+    <a href="/" class="back-link">&larr; All editions</a>
+
+    <article>
+      
+
+      <div class="post-body">
+        <h1>The model is the commodity. The glue code is the product.</h1>
+<p><em>Ground Model — Daily AI newsletter for builders who ship</em></p>
+<hr />
+<h2>Lead Story: AWS's Strands Glue Code Reveals Where Margins Actually Live</h2>
+<p>AWS published a detailed walkthrough on <a href="https://aws.amazon.com/blogs/machine-learning/building-custom-model-provider-for-strands-agents-with-llms-hosted-on-sagemaker-ai-endpoints/">building custom model providers for Strands Agents</a> using LLMs hosted on SageMaker endpoints. On the surface, it's a technical tutorial about parsing response formats. Read it through the commoditization lens and it's something more revealing.</p>
+<p><strong>What's actually happening:</strong> Organizations are deploying open models (Llama 3.1 in this case) on SageMaker via SGLang/vLLM, but these endpoints speak OpenAI-compatible formats while AWS's Strands agent framework expects Bedrock Messages API format. The solution? A custom parser layer that translates between them.</p>
+<p>Stop and think about what this means. AWS is <em>explicitly building infrastructure</em> that makes the model layer hot-swappable. Llama today, Mistral tomorrow, your fine-tuned model next week — the Strands agent doesn't care. The parser adapts. The agent orchestration persists.</p>
+<p><strong>The builder's takeaway is stark:</strong> If you're building at the model layer, you're building a commodity. AWS, Google, and every cloud provider are racing to make model-swapping frictionless. The three-layer architecture in this post — Model Deployment Layer, Parser Layer, Agent Orchestration Layer — is a map of where value accrues:</p>
+<ul>
+<li><strong>Model Deployment Layer:</strong> Commodity. Race to zero. You're competing with $0.25/1M token Gemini Flash-Lite.</li>
+<li><strong>Parser/Translation Layer:</strong> Thin margin. Necessary but not defensible. This is plumbing.</li>
+<li><strong>Agent Orchestration + Domain Logic Layer:</strong> This is where the margin lives. The tools you connect, the workflows you encode, the domain-specific decision trees that actually solve business problems.</li>
+</ul>
+<p>This is also classic AWS playbook: open-source the agent SDK (Strands), commoditize the model layer, and capture margin on the infrastructure (SageMaker endpoints, Bedrock integration, compute). They want you building on their orchestration layer while they make the model beneath it irrelevant.</p>
+<p>AWS is also pushing <a href="https://aws.amazon.com/blogs/machine-learning/enhance-ai-agents-using-predictive-ml-models-with-amazon-sagemaker-ai-and-model-context-protocol-mcp/">MCP integration with SageMaker</a> — combining predictive ML models with LLM agents via an open protocol. Again: standardize the interfaces, commoditize the models, lock in on infrastructure.</p>
+<p><strong>What to do about it:</strong> If you're an AI product builder, audit your stack right now. How much of your value proposition disappears if someone swaps your underlying model for a cheaper one? If the answer is "most of it," you have a model-dependency problem, not a product. The defensible play is proprietary data pipelines, domain-specific tool integrations, and workflow logic that would take a competitor months to replicate — regardless of which model powers the reasoning underneath.</p>
+<p>We've been saying it: cloud providers are weaponizing capital to embed AI into their platforms. This Strands architecture is exactly that strategy in action. The model is the loss leader. The orchestration platform is the lock-in.</p>
+<hr />
+<h2>Quick Hits</h2>
+<p><strong>$1,500 to train a competitive text-to-image model.</strong> <a href="https://huggingface.co/blog/Photoroom/prx-part3">Photoroom's PRX research</a> trained a diffusion model in 24 hours on 32 H200 GPUs. If a startup can train a competitive image model for the price of a used car, the "we trained an expensive model" moat is dead. Defensibility has to come from the application layer.</p>
+<p><strong>Gemini 3.1 Flash-Lite: $0.25 per million input tokens.</strong> <a href="https://deepmind.google/blog/gemini-3-1-flash-lite-built-for-intelligence-at-scale/">Google's new bottom-tier model</a> is designed for high-volume, cost-sensitive workloads. Google explicitly competing on price in the commodity model market. Use cheap models for cheap tasks, expensive models for hard tasks. Model routing is becoming a core engineering competency.</p>
+<p><strong>GPT-5.2 announced.</strong> <a href="https://openai.com/index/introducing-gpt-5-2">OpenAI dropped GPT-5.2</a> — details sparse, but the rapid cadence tells the real story: model generations are compressing. The gap between "frontier" and "good enough" shrinks with every release.</p>
+<p><strong>BNY Mellon goes all-in on OpenAI.</strong> <a href="https://openai.com/index/bny">The financial services giant</a> is building "AI for everyone, everywhere" with OpenAI. Classic enterprise lock-in: embed into institutional workflows, capture proprietary financial data flows, make switching costs astronomical. We've tracked this pattern for months — it's accelerating.</p>
+<p><strong>OpenAI updates Model Spec with teen protections.</strong> <a href="https://openai.com/index/updating-model-spec-with-teen-protections">New guardrails for younger users</a>. Regulatory compliance is becoming product surface area. If you're shipping consumer-facing AI without age-gated behavior, you're building regulatory debt.</p>
+<hr />
+<h2>Company Watch: AWS Strands Agents</h2>
+<p><strong>What it is:</strong> An open-source SDK from AWS for building AI agents, now with custom model provider support for SageMaker-hosted LLMs.</p>
+<p><strong>Why it matters:</strong> AWS is playing the classic platform game — open-source the developer tooling, commoditize the model layer, and monetize the infrastructure underneath. Strands + SageMaker + Bedrock creates a full-stack agent platform where AWS captures margin at every layer <em>except</em> the model itself.</p>
+<p><strong>The strategic read:</strong> AWS is betting that the orchestration framework — not the model — becomes the developer's primary dependency. If Strands becomes the default way enterprises build agents, AWS wins regardless of whether the model underneath is Llama, Mistral, or Claude. This is why they're investing in making model-swapping trivially easy.</p>
+<p><strong>Builder implication:</strong> If you're building agent infrastructure that competes with Strands, you need a differentiation story beyond "we also orchestrate LLM calls." Domain-specific agent templates, proprietary tool ecosystems, or vertical-specific compliance layers are the play. Generic orchestration is being given away for free.</p>
+<hr />
+<h2>Tool of the Day: ml-container-creator (awslabs)</h2>
+<p>AWS's tool for deploying custom LLM serving containers on SageMaker. Handles container packaging for SGLang, vLLM, and other serving frameworks so you can deploy open models to SageMaker endpoints without hand-rolling Docker configs.</p>
+<p><strong>Why builders should care:</strong> The fastest way to cut inference costs is to self-host open models for tasks that don't need frontier capabilities. This tool removes the DevOps friction. Not glamorous, but it's the infrastructure decision that separates profitable AI products from ones subsidizing OpenAI's revenue.</p>
+<hr />
+<h2>Stat of the Day</h2>
+<p><strong>$1,500 and 24 hours</strong> to train a competitive text-to-image diffusion model on 32 H200 GPUs — down from months and millions just 3 years ago. <em>(Source: Photoroom/Hugging Face PRX Part 3)</em></p>
+<hr />
+<p><em>The model is the commodity. The workflow is the product. The data is the moat. Build accordingly.</em></p>
+      </div>
+    </article>
+
+    <!-- Share buttons -->
+    <div class="share-section">
+      <span class="share-label">Share this edition:</span>
+      <a href="https://twitter.com/intent/tweet?text=The%20model%20is%20the%20commodity.%20The%20glue%20code%20is%20the%20product.&url=https%3A//groundmodel.com/posts/2026/03/06/the-model-is-the-commodity-the-glue-code-is-the-product.html"
+         target="_blank" rel="noopener" class="share-btn">𝕏 Twitter</a>
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A//groundmodel.com/posts/2026/03/06/the-model-is-the-commodity-the-glue-code-is-the-product.html"
+         target="_blank" rel="noopener" class="share-btn">LinkedIn</a>
+      <button onclick="navigator.clipboard.writeText(window.location.href).then(()=>{this.textContent='Copied!';setTimeout(()=>{this.textContent='Copy link'},2000)})" class="share-btn">Copy link</button>
+    </div>
+
+    <!-- Subscribe CTA -->
+    <div class="subscribe-cta">
+      <h3>Get Ground Model in your inbox</h3>
+      <p>Daily AI briefings for builders. No hype. Just signal. Free, Mon-Fri.</p>
+      <a href="https://ground-model.beehiiv.com/subscribe" class="btn-subscribe">Subscribe free</a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-bottom">
+        <span class="copyright">&copy; 2026 Ground Model</span>
+        <a href="https://ground-model.beehiiv.com/unsubscribe" class="unsubscribe">Unsubscribe</a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Company logos for Quick Hits items: inject via JS using Clearbit -->
+  <script>
+  (function() {
+    // Parse domains from brief_domains passed from Python template
+    var briefDomains = ["huggingface.co", "deepmind.google", "openai.com"];
+
+    // Find all links in the post body that are "Read more" links
+    var links = document.querySelectorAll('.post-body a');
+    var domainIndexMap = {};
+    briefDomains.forEach(function(d, i) { domainIndexMap[d] = i; });
+
+    links.forEach(function(a) {
+      try {
+        var url = new URL(a.href);
+        var domain = url.hostname.replace(/^www\./, '');
+        if (briefDomains.indexOf(domain) === -1) return;
+
+        // Walk up to find the containing paragraph or list item
+        var container = a.closest('p') || a.closest('li');
+        if (!container) return;
+
+        // Only inject once per container
+        if (container.dataset.logoInjected) return;
+        container.dataset.logoInjected = '1';
+
+        // Find the bold headline (strong tag) or first text
+        var strong = container.querySelector('strong');
+
+        // Create logo img
+        var img = document.createElement('img');
+        img.src = 'https://logo.clearbit.com/' + domain + '?size=64';
+        img.alt = domain;
+        img.className = 'brief-logo';
+        img.width = 28;
+        img.height = 28;
+        img.onerror = function() {
+          // Replace with fallback SVG icon
+          var fallback = document.createElement('span');
+          fallback.className = 'brief-logo-fallback';
+          fallback.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>';
+          img.replaceWith(fallback);
+        };
+
+        // Wrap in brief-card if in a plain paragraph
+        if (container.tagName === 'P') {
+          var card = document.createElement('div');
+          card.className = 'brief-card';
+
+          var head = document.createElement('div');
+          head.className = 'brief-card-head';
+          head.appendChild(img);
+
+          if (strong) {
+            var headline = document.createElement('div');
+            headline.className = 'brief-headline';
+            headline.innerHTML = strong.innerHTML;
+            head.appendChild(headline);
+            strong.remove();
+          }
+          card.appendChild(head);
+
+          var body = document.createElement('div');
+          body.className = 'brief-body';
+          body.innerHTML = container.innerHTML;
+          card.appendChild(body);
+
+          container.replaceWith(card);
+        } else {
+          // li: just prepend the logo
+          container.insertBefore(img, container.firstChild);
+        }
+      } catch(e) {}
+    });
+  })();
+  </script>
+
+</body>
+</html>
